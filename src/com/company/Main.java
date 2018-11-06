@@ -11,9 +11,16 @@ public class Main {
         int section=0;
         do {
             //сделать удобное меню
-            System.out.println("1");
-            System.out.println("2");
-            System.out.println("3");
+            System.out.println("1. С помощью цикла вычислите значение выражения 2n");
+            System.out.println("2. Составьте программу расчета факториала для произвольного\n" +
+                    "числа n<10.");
+            System.out.println("3. Даны два действительных числа. Необходимо получить их\n" +
+                    "сумму, разность и произведение. Результат вывести на консоль.");
+            System.out.println("4. Определить время свободного падения материального тела с\n" +
+                    "заданной высоты h. Результат вывести в консоль.");
+            System.out.println("5. Составьте программу для нахождения длины катета прямоугольного\n" +
+                    "треугольника (b), если известны длины гипотенузы (c) и\n" +
+                    "катета (a). Результат вывести на консоль.");
 
             System.out.println("Введите номер действия:");
             section = scan.nextInt();
@@ -28,6 +35,13 @@ public class Main {
                 case 3:
                     Numbers();
                     break;
+                case 4:
+                    Time();
+                    break;
+                case 5:
+                    triangle();
+                    break;
+
 
                 default:
                     System.out.println("Неверное действие!!!");
@@ -104,6 +118,22 @@ public class Main {
         System.out.println("Время свободного падения с высоты "+h+
             " равнa:"+time);
 
+    }
+
+    private static void triangle(){
+
+        Scanner scan=new Scanner(System.in);
+
+        double a=0;
+        System.out.println("Введите катет a:");
+        a = scan.nextDouble();
+        double b=0;
+        double c=0;
+        System.out.println("Введите гипотенузу c:");
+        c = scan.nextDouble();
+            b=((c*c)-(a*a));
+       // System.out.println("Катет равен:"b, Math.sqrt(double b));
+        System.out.printf("sqrt(%.3f) = %.3f%n", b, Math.sqrt(b));
     }
 
 }
